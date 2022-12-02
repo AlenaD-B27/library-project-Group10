@@ -1,0 +1,11 @@
+1. Create your branch from DEVELOP branch. Name it "TS10-NUMBER-YOURNAME" --> example: TS10-324-Alena
+2. Commit message should have sense --> it should contain the information about the latest changes you've made
+3. PUSH! :)
+4. Do not delete any existing files. Feel free to use the files which belong to you.
+
+
+P.S. All the snippets are ready to use --> clean them and implement. No need to create the new Step Definitions or Pages java classes.
+
+Good luck! Due date for project is 12/6 (Tuesday). So, on Monday the Project will be merged. Please, do not miss the group study on Monday 12/5 at 8:00 PM EST (7:00 PM Central Time).
+
+AGENDA! ADDITIONAL SCRUM MEETINGS WILL HAPPEN ON SATURDAY(12/3) AND SUNDAY(12/4) AT 12:00 PM EST. BUT!!!! IF YOU NEED EXTRA COLLABORATION WITH THE TEAM AT ANY OTHER TIME JUST ENTER ZOOM AND LET US KNOW AND EVERYBODY WHO IS NOT BUSY WILL JOIN. ON TUESDAY WE MUST BE READY TO PRESENT OUR PROJECT ON SOFTSKILL CLASS. LET'S SHOW EVERYONE THAT WE ARE THE BEST TEAM!!!
