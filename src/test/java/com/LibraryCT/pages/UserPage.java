@@ -11,6 +11,16 @@ public class UserPage extends BasePage {
     @FindBy(xpath = "(//tbody//a[@role='button'])[1]")
     public WebElement editUser;
 
+    @FindBy(xpath = "//*[@id=\"menu_item\"]/li[3]/a/span[1]")
+    public WebElement bookButton;
+
+    @FindBy(xpath = "//*[@id=\"books\"]/div[1]/div[1]/span/a")
+    public WebElement addBook;
+
+    @FindBy(name = "name")
+    public WebElement bookName;
+
+
     @FindBy(id = "status")
     public WebElement statusDropdown;
 

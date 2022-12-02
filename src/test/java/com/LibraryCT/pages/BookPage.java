@@ -33,8 +33,8 @@ public class BookPage extends BasePage {
     @FindBy(name = "isbn")
     public WebElement isbn;
 
-    @FindBy(id = "description")
-    public WebElement description;
+    @FindBy(id = "book category")
+    public WebElement category;
 
 
 
@@ -42,7 +42,6 @@ public class BookPage extends BasePage {
         String xpath = "//td[3][.='" + book + "']/../td/a";
         return Driver.getDriver().findElement(By.xpath(xpath));
     }
-
 
 
 
