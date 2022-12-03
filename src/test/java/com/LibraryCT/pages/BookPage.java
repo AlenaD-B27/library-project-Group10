@@ -43,6 +43,8 @@ public class BookPage extends BasePage {
         return Driver.getDriver().findElement(By.xpath(xpath));
     }
 
+    @FindBy(xpath = "//table/tbody/tr/td")
+    public WebElement borrowBook;
 
 
 
