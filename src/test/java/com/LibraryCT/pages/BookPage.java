@@ -42,7 +42,10 @@ public class BookPage extends BasePage {
         String xpath = "//td[3][.='" + book + "']/../td/a";
         return Driver.getDriver().findElement(By.xpath(xpath));
     }
-
+    public WebElement borrowBook(String book) {
+        String xpath = "//td[3][.='" + book + "']/../td/a";
+        return Driver.getDriver().findElement(By.xpath(xpath));
+    }
 
 
 
