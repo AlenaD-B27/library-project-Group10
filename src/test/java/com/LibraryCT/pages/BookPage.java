@@ -17,7 +17,7 @@ public class BookPage extends BasePage {
     public List<WebElement> allCells;
 
     @FindBy(xpath = "//table/thead/tr/td")
-    public List<WebElement> tableHeaderCells;
+    public List<WebElement> tableHeaderCellsAlena;
 
     @FindBy(xpath = "//input[@type='search']")
     public WebElement search;
