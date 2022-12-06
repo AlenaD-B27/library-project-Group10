@@ -82,7 +82,6 @@ public class Driver {
         }
 
         return driverPool.get();
-
     }
 
     // This method will make sure our driver value is always null after using quit() method
