@@ -19,6 +19,7 @@ public class Vitalii_Step_Defs {
 
     String actualResult;
     List<String> actualList;
+    String actualGenreDB;
 
     @Given("Establish the database connection by Vitalii")
     public void establish_the_database_connection_by_vitalii() {
@@ -64,8 +65,10 @@ public class Vitalii_Step_Defs {
     public void i_execute_query_to_find_most_popular_book_genre_by_vitalii() {
 
     }
+
+
     @Then("verify {string} is the most popular book genre by Vitalii")
-    public void verify_is_the_most_popular_book_genre_by_vitalii(String string) {
+    public void verify_is_the_most_popular_book_genre_by_vitalii(String expectedGenre) {
 
     }
 }
