@@ -1,8 +1,8 @@
 select * from users;
 
 -- us-1
-
-
+select count(id) from users;
+select count(distinct id) from users;
 
 -- us-2
 select count(*) as borrowedBooks from users u
@@ -34,5 +34,6 @@ order by id desc;
 select full_name,b.name,bb.borrowed_date from users u
 inner join book_borrow bb on u.id = bb.user_id
 inner join books b on bb.book_id = b.id
-where full_name='Test Student 38'
+where full_name='Test Student 35'
 order by 3 desc;
+
