@@ -19,6 +19,10 @@ public class BookPage extends BasePage {
     @FindBy(id = "book_categories")
     public WebElement mainCategoryElement;
 
+
+    @FindBy(name = "name")
+    public WebElement borrowBook;
+
     @FindBy(name = "name")
     public WebElement bookName;
 
@@ -35,6 +39,9 @@ public class BookPage extends BasePage {
 
     @FindBy(id = "book category")
     public WebElement category;
+
+    @FindBy(id = "description")
+    public WebElement description;
 
 
 

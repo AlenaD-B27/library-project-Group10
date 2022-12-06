@@ -10,6 +10,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+
 
 import java.util.List;
 import java.util.Map;
@@ -67,6 +69,7 @@ public class Olesya_Step_Defs {
 
         String query = "select name from book_category_id";
 
+
         //run query to get all categories from Database
         DB_Util.runQuery(query);
 
@@ -86,14 +89,15 @@ public class Olesya_Step_Defs {
 
         // get data from UI
         String actualBookName = bookPage.bookName.getAttribute("value");
-//        String actualISBN = bookPage.isbn.getAttribute("value");
-//        String actualYear = bookPage.year.getAttribute("value");
-//        String actualAuthorName = bookPage.author.getAttribute("value");
-//        String actualCategoryList = bookPage.author.getAttribute("value");
+        String actualISBN = bookPage.isbn.getAttribute("value");
+        String actualYear = bookPage.year.getAttribute("value");
+        String actualAuthorName = bookPage.author.getAttribute("value");
+        String actualCategoryList = bookPage.author.getAttribute("value");
 
         // get data from Database
-//        String query = "select name from isbn,year,author,category from books\n" +
-//                "where name='" + bookName + "'";
+
+        query = "select name from isbn,year,author,category_id from books\n" +
+                "where name='" + actualBookName + "'";
 
         DB_Util.runQuery(query);
         //store information
@@ -101,25 +105,25 @@ public class Olesya_Step_Defs {
         System.out.println("---- DATA FROM DATABASE ---- ");
         String expectedBookName = bookInfo.get("name");
         System.out.println(expectedBookName);
-//        String expectedISBN = bookInfo.get("isbn");
-//        String expectedYear = bookInfo.get("year");
-//        String expectedAuthorName = bookInfo.get("author");
-        //String expectedBookCategoryId = bookInfo.get("mainCategoryElement");
+        String expectedISBN = bookInfo.get("isbn");
+        String expectedYear = bookInfo.get("year");
+        String expectedAuthorName = bookInfo.get("author");
+       // String expectedBookCategoryId = bookInfo.get("mainCategoryElement");
 
 
         // compare
         Assert.assertEquals(expectedBookName, actualBookName);
-//        Assert.assertEquals(expectedISBN, actualISBN);
-//        Assert.assertEquals(expectedYear, actualYear);
-//        Assert.assertEquals(expectedAuthorName, actualAuthorName);
+        Assert.assertEquals(expectedISBN, actualISBN);
+        Assert.assertEquals(expectedYear, actualYear);
+        Assert.assertEquals(expectedAuthorName, actualAuthorName);
        Assert.assertEquals(expectedBookCategoryId, actualCategoryList);
 
         BrowserUtil.waitFor(2);
-
+        userPage.books.sendKeys();
 
     }
 
-//   userPage.bookName.sendKeys();
+
 
 
 
@@ -138,6 +142,9 @@ public class Olesya_Step_Defs {
     }
     @When("the librarian choose the book category {string} by Olesya")
     public void the_librarian_choose_the_book_category_by_olesya(String string) {
+        BrowserUtil.selectByVisibleText(userPage.numberOfUsersDropdown, "500");
+        BrowserUtil.waitFor(3);
+        bookPage.borrowBook.click();
 
     }
     @When("the librarian click to save changes by Olesya")
