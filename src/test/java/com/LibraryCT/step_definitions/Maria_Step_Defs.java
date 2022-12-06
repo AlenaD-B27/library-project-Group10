@@ -58,8 +58,8 @@ public class Maria_Step_Defs {
                 "order by 3 desc";
         DB_Util.runQuery(query);
         List<String> allActualInfo = new ArrayList<>();
-        for(int i = 0; i < bookPage.allCell.size(); i++){
-        String info = bookPage.allCell.get(i).getText();
+        for(int i = 0; i < bookPage.allCells.size(); i++){
+        String info = bookPage.allCells.get(i).getText();
         allActualInfo.add(info.toLowerCase());
         List <String> expectedInfoBook = DB_Util.getRowDataAsList(1);
 

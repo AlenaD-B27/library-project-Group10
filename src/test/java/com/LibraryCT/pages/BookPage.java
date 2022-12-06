@@ -39,6 +39,12 @@ public class BookPage extends BasePage {
     @FindBy(xpath = "//table/tbody/tr/td")
     public WebElement borrowBook;
 
+    @FindBy(xpath = "//table/tbody/tr/td")
+    public List<WebElement> allCells;
+
+    @FindBy(xpath = "//table/thead/tr/td")
+    public List<WebElement> tableHeaderCells;
+
 
 
 
