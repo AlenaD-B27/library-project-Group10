@@ -34,8 +34,8 @@ public class Alena_Step_Defs {
 
         Map<String,String> actualInfo = new HashMap<>();
 
-        for (int i = 0; i < bookPage.tableHeaderCells.size(); i++) {
-            String key = bookPage.tableHeaderCells.get(i).getText();
+        for (int i = 0; i < bookPage.tableHeaderCellsAlena.size(); i++) {
+            String key = bookPage.tableHeaderCellsAlena.get(i).getText();
             String value = bookPage.allCells.get(i).getText();
             actualInfo.put(key.toLowerCase(), value);
         }
