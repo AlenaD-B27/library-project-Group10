@@ -25,7 +25,7 @@ public class LoginPage {
 
 
 
-    public void login(String userType){
+    public  void login(String userType){
 
         String username= ConfigurationReader.getProperty(userType.toLowerCase()+"_username");
         String password=ConfigurationReader.getProperty(userType.toLowerCase()+"_password");

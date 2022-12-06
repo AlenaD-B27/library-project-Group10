@@ -39,24 +39,15 @@ public class BookPage extends BasePage {
     @FindBy(xpath = "//table/tbody/tr/td")
     public WebElement borrowBook;
 
-    @FindBy(xpath = "//table/tbody/tr/td")
-    public List<WebElement> allCell;
 
-    @FindBy (xpath = "//table/thead/tr/th")
-    public List<WebElement> tableHeaderCells;
 
-    @FindBy(xpath = "//table/thead/tr/td")
-    public List<WebElement> tableHeaderCellsAlena;
 
-    @FindBy(xpath = "//table/tbody/tr/td")
-    public List<WebElement> allCells;
 
 
     public WebElement editBook(String book) {
         String xpath = "//td[3][.='" + book + "']/../td/a";
         return Driver.getDriver().findElement(By.xpath(xpath));
     }
-
 
 
 }
