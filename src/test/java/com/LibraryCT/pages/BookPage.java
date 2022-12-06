@@ -4,6 +4,7 @@ package com.LibraryCT.pages;
 import com.LibraryCT.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
@@ -41,6 +42,14 @@ public class BookPage extends BasePage {
 
     @FindBy(id = "description")
     public WebElement description;
+    @FindBy(xpath = "//table/tbody/tr/td")
+    public WebElement borrowBook;
+
+    @FindBy(xpath = "//table/tbody/tr/td")
+    public List<WebElement> allCell;
+
+    @FindBy (xpath = "//table/thead/tr/th")
+    public List<WebElement> tableHeaderCells;
 
 
 
