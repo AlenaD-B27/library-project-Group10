@@ -54,7 +54,7 @@ public class Driver {
                 case "remote-firefox":
                     try {
                         // assign your grid server address
-                        String gridAddress = "USE.YOUR.OWN.INSTANCE"; //TODO
+                        String gridAddress = "54.198.193.9"; //TODO
                         URL url = new URL("http://"+ gridAddress + ":4444/wd/hub");
                         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
                         desiredCapabilities.setBrowserName("firefox");
