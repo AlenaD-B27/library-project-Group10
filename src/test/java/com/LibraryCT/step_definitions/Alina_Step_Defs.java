@@ -65,8 +65,8 @@ public class Alina_Step_Defs {
     @Then("verify logged student has same book in database by Alina")
     public void verify_logged_student_has_same_book_in_database_by_alina() {
         List<String> allActualInfo = new ArrayList<>();
-        for(int i = 0; i < bookPage.allCell.size(); i++){
-            String info = bookPage.allCell.get(i).getText();
+        for(int i = 0; i < bookPage.allCells.size(); i++){
+            String info = bookPage.allCells.get(i).getText();
             allActualInfo.add(info.toLowerCase());
         }
         String query = "select full_name,b.name,bb.borrowed_date from users u\n" +
