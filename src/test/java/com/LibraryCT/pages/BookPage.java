@@ -28,11 +28,20 @@ public class BookPage extends BasePage {
     public WebElement author;
 
 
+
+    @FindBy (css = "a[href='tpl/add-book.html']")
+    public WebElement addBooks;
+
+
     @FindBy(name = "year")
     public WebElement year;
 
     @FindBy(name = "isbn")
     public WebElement isbn;
+
+    @FindBy(id = "book_group_id")
+    public WebElement categoryDropdown;
+
 
     @FindBy(id = "description")
     public WebElement description;
@@ -42,8 +51,19 @@ public class BookPage extends BasePage {
     @FindBy(xpath = "//table/tbody/tr/td")
     public List<WebElement> allCells;
 
+
+
+    @FindBy(css = " .toast-message")
+    public WebElement toastMessage;
+
+    @FindBy (xpath = "//select[@id='book_group_id']")
+    public WebElement bookCategory;
+
     @FindBy(xpath = "//table/thead/tr/td")
     public List<WebElement> tableHeaderCells;
+
+    @FindBy (xpath = "//form[@id='add_book_form']//button[@type='submit']")
+    public WebElement saveChangesBtn;
 
 
 
@@ -54,6 +74,36 @@ public class BookPage extends BasePage {
         String xpath = "//td[3][.='" + book + "']/../td/a";
         return Driver.getDriver().findElement(By.xpath(xpath));
     }
+    @FindBy (xpath = "//table[@id='tbl_books']/tbody/tr/td[3]")
+    public List<WebElement> verifyBookName;
+
+    public  String verifyFileName(List<WebElement> listOfElements, String expected){
+        String actual = "";
+        for (WebElement each : listOfElements){
+            if(each.getText().equalsIgnoreCase(expected)){
+                actual += "" + each.getText();
+                break;
+            }
+        }
+        return actual;
+        //System.out.println(actual);
+        //Assert.assertEquals(expected,actual);
+    }
+
+    public static String actualBookName(List<WebElement> listOfElements, String expected){
+        String actual = "";
+        for (WebElement each : listOfElements){
+            if(each.getText().equalsIgnoreCase(expected)){
+                actual += "" + each.getText();
+                break;
+            }
+        }
+        return actual;
+        //System.out.println(actual);
+        //Assert.assertEquals(expected,actual);
+    }
+
+
 
 
 }

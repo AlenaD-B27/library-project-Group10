@@ -390,6 +390,4 @@ public class BrowserUtil {
         select.selectByVisibleText(option);
     }
 
-
-
 }
