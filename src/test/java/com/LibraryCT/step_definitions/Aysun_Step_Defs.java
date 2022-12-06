@@ -1,5 +1,6 @@
 package com.LibraryCT.step_definitions;
 
+import com.LibraryCT.utilities.BrowserUtil;
 import com.LibraryCT.utilities.DB_Util;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -23,6 +24,7 @@ public class Aysun_Step_Defs {
         String query1 = "select count(id) from users";
         DB_Util.runQuery(query1);
        actualResult = DB_Util.getFirstRowFirstColumn();
+        BrowserUtil.waitFor(1);
 
     }
     @Then("verify all users has unique ID by Aysun")
@@ -31,6 +33,7 @@ public class Aysun_Step_Defs {
         DB_Util.runQuery(query2);
         String expectedResult = DB_Util.getCellValue(1,1);
         Assert.assertEquals(expectedResult,actualResult);
+        BrowserUtil.waitFor(1);
     }
 
     @When("Execute query to get all columns by Aysun")
@@ -38,13 +41,14 @@ public class Aysun_Step_Defs {
     DB_Util.runQuery("select * from users");
         actualList = DB_Util.getAllColumnNamesAsList();
         System.out.println("actualList = " + actualList);
+        BrowserUtil.waitFor(1);
     }
 
     @Then("verify the below columns are listed in result by Aysun")
     public void verify_the_below_columns_are_listed_in_result_by_aysun (List<String> expectedList) {
         Assert.assertEquals(expectedList,actualList);
         System.out.println("expectedList = " + expectedList);
-
+        BrowserUtil.waitFor(1);
     }
 
 }
