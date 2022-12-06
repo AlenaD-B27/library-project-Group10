@@ -1,7 +1,7 @@
 package com.LibraryCT.step_definitions;
 
 import com.LibraryCT.pages.BookPage;
-import com.LibraryCT.pages.BorrowedBooksPage;
+
 import com.LibraryCT.pages.DashBoardPage;
 import com.LibraryCT.pages.LoginPage;
 import com.LibraryCT.utilities.BrowserUtil;
@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class Zorig_Step_Defs {
     LoginPage loginPage = new LoginPage();
-    BookPage bookPage = new BookPage();
+    BookPage bookPage;
 
     DashBoardPage dashBoardPage = new DashBoardPage();
     String actualNumber;
@@ -97,7 +97,7 @@ public class Zorig_Step_Defs {
     }
     @Then("the librarian verify new book by {string} by Zorig")
     public void the_librarian_verify_new_book_by_by_zorig(String bookName) {
-        //Assert.assertEquals(bookName, bookPage.bookName.getText());
+
 
     }
     @Then("the librarian verify new book from database by {string} by Zorig")
