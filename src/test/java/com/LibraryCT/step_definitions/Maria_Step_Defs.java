@@ -68,7 +68,6 @@ public class Maria_Step_Defs {
                 Assert.assertEquals(expectedInfoBook.get(j), allActualInfo.get(i));
             }
         }
-
     }
 }
 }
