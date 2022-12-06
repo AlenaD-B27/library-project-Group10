@@ -31,8 +31,8 @@ public class LoginPage {
         String password=ConfigurationReader.getProperty(userType.toLowerCase()+"_password");
 
 
-        emailBox.sendKeys(username);
-        passwordBox.sendKeys(password);
+        emailBox.sendKeys("librarian21@library");
+        passwordBox.sendKeys("ZxlVsgKX");
         loginButton.click();
 
     }
