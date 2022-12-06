@@ -1,8 +1,8 @@
 select * from users;
 
 -- us-1
-
-
+select count(id) from users;
+select count(distinct id) from users;
 
 -- us-2
 select count(*) as borrowedBooks from users u
