@@ -51,20 +51,13 @@ public class Maria_Step_Defs {
     @Then("verify logged student has same book in database by Maria")
     public void verify_logged_student_has_same_book_in_database_by_maria() {
 
-       Map<String,String> verifyInfoBook = new HashMap<>();
-        for(int i = 0 ; i < bookPage.tableHeaderCells.size(); i++){
-            String getKey = bookPage.tableHeaderCells.get(i).getText();
-            String getValue = bookPage.allCell.get(i).getText();
-            verifyInfoBook.put(getKey.toLowerCase(),getValue);
-        }
-
         String query = "select full_name,b.name,bb.borrowed_date from users u\n" +
                 "inner join book_borrow bb on u.id = bb.user_id\n" +
                 "inner join books b on bb.book_id = b.id\n" +
                 "where full_name='Test Student 35'\n" +
                 "order by 3 desc";
         DB_Util.runQuery(query);
-   /*  List<String> allActualInfo = new ArrayList<>();
+        List<String> allActualInfo = new ArrayList<>();
         for(int i = 0; i < bookPage.allCell.size(); i++){
         String info = bookPage.allCell.get(i).getText();
         allActualInfo.add(info.toLowerCase());
@@ -72,19 +65,11 @@ public class Maria_Step_Defs {
 
         for(int j = 0; j < expectedInfoBook.size(); j++){
             if(allActualInfo.get(i).contains(bookName)){
-                Assert.assertEquals(expectedInfoBook.get(i), allActualInfo.get(j));
-            }
-        }
-
-    }*/
-
-        Map <String,String> expectedInfo = DB_Util.getRowMap(1);
-        for (String eachKey : expectedInfo.keySet()) {
-           if(verifyInfoBook.containsKey(eachKey)){
-                Assert.assertEquals(expectedInfo.get(eachKey),verifyInfoBook.get(eachKey));
+                Assert.assertEquals(expectedInfoBook.get(j), allActualInfo.get(i));
             }
         }
 
     }
+}
 }
 
