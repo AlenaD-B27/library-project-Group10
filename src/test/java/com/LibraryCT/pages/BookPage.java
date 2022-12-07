@@ -24,7 +24,7 @@ public class BookPage extends BasePage {
     public WebElement categoryDropDown;
 
 
-    @FindBy(name = "name")
+    @FindBy(xpath = "//table/tbody/tr/td")
     public WebElement borrowBook;
 
     @FindBy(name = "name")
