@@ -4,6 +4,7 @@ Feature: Books module: As a librarian, I should be able to add new books to the 
   Scenario Outline: Verify added book is matching with DB
     Given I login as a "librarian" by Olesya
     And I navigate to "Books" page by Olesya
+    And I click on the "Books" module by Olesya
     When the librarian click to add book by Olesya
     And the librarian enter book name "<Book Name>" by Olesya
     When the librarian enter ISBN "<ISBN>" by Olesya

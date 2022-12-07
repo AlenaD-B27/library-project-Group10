@@ -20,6 +20,13 @@ public class BookPage extends BasePage {
     @FindBy(id = "book_categories")
     public WebElement mainCategoryElement;
 
+    @FindBy(id = "book_group_id")
+    public WebElement categoryDropDown;
+
+
+    @FindBy(name = "name")
+    public WebElement borrowBook;
+
     @FindBy(name = "name")
     public WebElement bookName;
 
@@ -34,10 +41,23 @@ public class BookPage extends BasePage {
     @FindBy(name = "isbn")
     public WebElement isbn;
 
+    @FindBy(xpath = "//div[@class='portlet-title']//a")
+    public WebElement addBook;
+
+    @FindBy(xpath = "//table[@id='tbl_books']/tbody/tr/td[3]")
+    public List<WebElement> verifyBookName;
+
+    @FindBy(xpath = "//form[@id='add_book_form']//button[@type='submit']")
+    public WebElement saveChangesBtn;
+
+
+//    @FindBy(id = "book category")
+//    public WebElement category;
+
     @FindBy(id = "description")
     public WebElement description;
-    @FindBy(xpath = "//table/tbody/tr/td")
-    public WebElement borrowBook;
+//    @FindBy(xpath = "//table/tbody/tr/td")
+//    public WebElement borrowBook;
 
     @FindBy(xpath = "//table/tbody/tr/td")
     public List<WebElement> allCells;
@@ -54,6 +74,32 @@ public class BookPage extends BasePage {
         String xpath = "//td[3][.='" + book + "']/../td/a";
         return Driver.getDriver().findElement(By.xpath(xpath));
     }
+    public WebElement borrowBook(String book){
+        String xpath = "//td[3][.='" + book + "']/../td/a";
+        return Driver.getDriver().findElement(By.xpath(xpath));
+    }
 
+    public String verifyFileName(List<WebElement> listOfElements, String expected) {
+        String actual = "";
+        for (WebElement each : listOfElements) {
+            if (each.getText().equalsIgnoreCase(expected)) {
+                actual += "" + each.getText();
+                break;
+            }
+        }
+        return actual;
+    }
+
+    public String actualBookName(List<WebElement> listOfElements, String expected) {
+        String actual = "";
+        for (WebElement each : listOfElements) {
+            if (each.getText().equalsIgnoreCase(expected)) {
+                actual += "" + each.getText();
+                break;
+            }
+        }
+        return actual;
+    }
 
 }
+

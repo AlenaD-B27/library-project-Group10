@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.w3c.dom.html.HTMLInputElement;
 // PLEASE DO NOT MAKE ANY CHANGES IN THIS CLASS WITHOUT COMMUNICATION WITH THE TEAM! THANK YOU!
 // PLEASE DO NOT MAKE ANY CHANGES IN THIS CLASS WITHOUT COMMUNICATION WITH THE TEAM! THANK YOU!
 // PLEASE DO NOT MAKE ANY CHANGES IN THIS CLASS WITHOUT COMMUNICATION WITH THE TEAM! THANK YOU!
@@ -16,6 +17,7 @@ import org.openqa.selenium.support.PageFactory;
  * abstract - to prevent instantiation.
  */
 public abstract  class BasePage {
+
     // PLEASE DO NOT MAKE ANY CHANGES IN THIS CLASS WITHOUT COMMUNICATION WITH THE TEAM! THANK YOU!
 
     public BasePage() {
