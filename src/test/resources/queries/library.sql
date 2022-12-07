@@ -30,6 +30,8 @@ select id,name,author from books
 where name = 'Clean Code' and author='Robert C.Martin'
 order by id desc;
 
+
+
 -- us-7
 select full_name,b.name,bb.borrowed_date from users u
 inner join book_borrow bb on u.id = bb.user_id

@@ -35,6 +35,11 @@ public class BookPage extends BasePage {
     public WebElement author;
 
 
+
+    @FindBy (css = "a[href='tpl/add-book.html']")
+    public WebElement addBooks;
+
+
     @FindBy(name = "year")
     public WebElement year;
 
@@ -54,6 +59,10 @@ public class BookPage extends BasePage {
 //    @FindBy(id = "book category")
 //    public WebElement category;
 
+    @FindBy(id = "book_group_id")
+    public WebElement categoryDropdown;
+
+
     @FindBy(id = "description")
     public WebElement description;
 //    @FindBy(xpath = "//table/tbody/tr/td")
@@ -61,6 +70,14 @@ public class BookPage extends BasePage {
 
     @FindBy(xpath = "//table/tbody/tr/td")
     public List<WebElement> allCells;
+
+
+
+    @FindBy(css = " .toast-message")
+    public WebElement toastMessage;
+
+    @FindBy (xpath = "//select[@id='book_group_id']")
+    public WebElement bookCategory;
 
     @FindBy(xpath = "//table/thead/tr/td")
     public List<WebElement> tableHeaderCells;
@@ -70,11 +87,11 @@ public class BookPage extends BasePage {
 
 
 
+
+
+
+
     public WebElement editBook(String book) {
-        String xpath = "//td[3][.='" + book + "']/../td/a";
-        return Driver.getDriver().findElement(By.xpath(xpath));
-    }
-    public WebElement borrowBook(String book){
         String xpath = "//td[3][.='" + book + "']/../td/a";
         return Driver.getDriver().findElement(By.xpath(xpath));
     }
@@ -102,4 +119,3 @@ public class BookPage extends BasePage {
     }
 
 }
-
