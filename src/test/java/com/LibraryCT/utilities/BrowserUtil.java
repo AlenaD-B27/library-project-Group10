@@ -390,4 +390,9 @@ public class BrowserUtil {
         select.selectByVisibleText(option);
     }
 
+
+    public static void selectOptionDropdown(WebElement categoryDropDown, String category) {
+        Select select = new Select(categoryDropDown);
+        select.selectByVisibleText(category);
+    }
 }

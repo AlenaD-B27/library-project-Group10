@@ -2,6 +2,7 @@ package com.LibraryCT.pages;
 
 
 import com.LibraryCT.utilities.Driver;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,6 +11,16 @@ public class UserPage extends BasePage {
 
     @FindBy(xpath = "(//tbody//a[@role='button'])[1]")
     public WebElement editUser;
+
+    @FindBy(xpath = "//*[@id=\"menu_item\"]/li[3]/a/span[1]")
+    public WebElement bookButton;
+
+    @FindBy(xpath = "//*[@id=\"books\"]/div[1]/div[1]/span/a")
+    public WebElement addBook;
+
+//    @FindBy(name = "name")
+//    public WebElement bookName;
+
 
     @FindBy(id = "status")
     public WebElement statusDropdown;
@@ -25,6 +36,7 @@ public class UserPage extends BasePage {
 
     @FindBy(id = "user_status")
     public WebElement userStatusDropdown;
+
 
     @FindBy(css = ".dataTables_info")
     private WebElement userCount;

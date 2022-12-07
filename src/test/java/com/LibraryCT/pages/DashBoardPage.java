@@ -32,4 +32,14 @@ public class DashBoardPage extends BasePage
         return elementOfModule.getText();
     }
 
+    public String getModuleBooks(String module){
+        //h6[normalize-space(.)='Books']//..//h2
+
+        String locator="//h6[normalize-space(.)='Books']//..//h2";
+
+        WebElement elementOfModule = Driver.getDriver().findElement(By.xpath(locator));
+
+        return elementOfModule.getText();
+    }
+
 }

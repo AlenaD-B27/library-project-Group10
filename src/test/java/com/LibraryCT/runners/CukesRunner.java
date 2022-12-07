@@ -16,9 +16,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features" ,
         glue = "com/LibraryCT/step_definitions",
         dryRun = false,
-        tags = "@Zorig"
-
-
+        tags = "@Maria"
 )
 public class CukesRunner {
 
