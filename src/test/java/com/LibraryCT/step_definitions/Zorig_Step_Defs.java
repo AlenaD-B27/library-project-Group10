@@ -15,10 +15,12 @@ import org.openqa.selenium.support.ui.Select;
 
 public class Zorig_Step_Defs {
     LoginPage loginPage = new LoginPage();
-    BookPage bookPage;
+    BookPage bookPage = new BookPage();
 
     DashBoardPage dashBoardPage = new DashBoardPage();
     String actualNumber;
+
+
 
     @Given("user login as a {string} by Zorig")
     public void user_login_as_a_by_zorig(String user) {

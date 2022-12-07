@@ -62,6 +62,8 @@ public class BookPage extends BasePage {
     @FindBy(xpath = "//table/thead/tr/td")
     public List<WebElement> tableHeaderCells;
 
+
+
     @FindBy (xpath = "//form[@id='add_book_form']//button[@type='submit']")
     public WebElement saveChangesBtn;
 
